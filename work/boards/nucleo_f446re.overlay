@@ -1,0 +1,35 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    chosen {
+        zephyr,display = &ssd1306;
+    };
+
+    encoder: encoder {
+        compatible = "gpio-qdec";
+        gpios = <&gpioa 10 GPIO_PULL_UP>, <&gpiob 5 GPIO_PULL_UP>;
+        steps-per-period = <4>;
+        zephyr,axis = <INPUT_REL_X>;
+        sample-time-us = <2000>;
+        idle-timeout-ms = <200>;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        prechargep = <0x22>;
+    };
+};

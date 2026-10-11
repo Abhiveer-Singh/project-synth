@@ -1,0 +1,2 @@
+# Load Zephyr board defconfig descriptions.
+osource "/home/halo/zephyrproject/zephyr/boards/st/nucleo_f446re/Kconfig.defconfig"

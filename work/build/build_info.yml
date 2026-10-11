@@ -1,0 +1,56 @@
+cmake:
+  application:
+    configuration-dir: /home/halo/zephyrproject/work
+    source-dir: /home/halo/zephyrproject/work
+  board:
+    name: nucleo_f446re
+    path:
+     - /home/halo/zephyrproject/zephyr/boards/st/nucleo_f446re
+    qualifiers: stm32f446xx
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /home/halo/zephyrproject/zephyr/dts/bindings
+    files:
+     - /home/halo/zephyrproject/zephyr/boards/st/nucleo_f446re/nucleo_f446re.dts
+     - /home/halo/zephyrproject/work/boards/nucleo_f446re.overlay
+    include-dirs:
+     - /home/halo/zephyrproject/modules/hal/atmel/include
+     - /home/halo/zephyrproject/modules/hal/gigadevice/include
+     - /home/halo/zephyrproject/modules/hal/microchip/include
+     - /home/halo/zephyrproject/modules/hal/microchip/dts
+     - /home/halo/zephyrproject/modules/hal/nuvoton/dts
+     - /home/halo/zephyrproject/modules/hal/nxp/dts
+     - /home/halo/zephyrproject/modules/hal/stm32/dts
+     - /home/halo/zephyrproject/zephyr/include
+     - /home/halo/zephyrproject/zephyr/include/zephyr
+     - /home/halo/zephyrproject/zephyr/dts/common
+     - /home/halo/zephyrproject/zephyr/dts/x86
+     - /home/halo/zephyrproject/zephyr/dts/xtensa
+     - /home/halo/zephyrproject/zephyr/dts/sparc
+     - /home/halo/zephyrproject/zephyr/dts/riscv
+     - /home/halo/zephyrproject/zephyr/dts/posix
+     - /home/halo/zephyrproject/zephyr/dts/nios2
+     - /home/halo/zephyrproject/zephyr/dts/arm64
+     - /home/halo/zephyrproject/zephyr/dts/arm
+     - /home/halo/zephyrproject/zephyr/dts/arc
+     - /home/halo/zephyrproject/zephyr/dts
+    user-files:
+     - /home/halo/zephyrproject/work/boards/nucleo_f446re.overlay
+  kconfig:
+    files:
+     - /home/halo/zephyrproject/zephyr/boards/st/nucleo_f446re/nucleo_f446re_defconfig
+     - /home/halo/zephyrproject/work/prj.conf
+    user-files:
+     - /home/halo/zephyrproject/work/prj.conf
+  toolchain:
+    name: zephyr
+    path: /home/halo/zephyr-sdk-0.16.8
+  zephyr:
+    version: 4.1.0
+    zephyr-base: /home/halo/zephyrproject/zephyr
+version: 0.1.0
+west:
+  command: /home/halo/.local/bin/west build -p always -b nucleo_f446re .
+  topdir: /home/halo/zephyrproject
+  version: 1.5.0

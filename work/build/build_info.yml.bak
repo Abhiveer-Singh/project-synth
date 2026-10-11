@@ -1,0 +1,4 @@
+west:
+  command: /home/halo/.local/bin/west build -p always -b nucleo_f446re .
+  topdir: /home/halo/zephyrproject
+  version: 1.5.0

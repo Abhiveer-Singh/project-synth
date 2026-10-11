@@ -1,0 +1,5 @@
+CompileFlags:
+  CompilationDatabase: build
+  Compiler: /home/halo/zephyr-sdk-0.16.8/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+  Remove: [-m*, -f*, -specs=*]
+  Add: [-xc, --target=arm-none-eabi]
